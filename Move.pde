@@ -154,7 +154,14 @@ class Move {
         ellipse(place_loc_x, place_loc_y, placeSize, placeSize);
         fill(255, 150);
         textSize(9);
-        text(place_name[i], place_loc_x+placeSize, place_loc_y+3);
+        if (place_loc_x < margin + canvasSize * 0.5) {
+          textAlign(LEFT);
+          text(place_name[i], place_loc_x+placeSize, place_loc_y+3);
+        }
+        else {
+          textAlign(RIGHT);
+          text(place_name[i], place_loc_x-placeSize, place_loc_y+3);
+        }
         placesDrawn.set(place_name[i], "true");
       }
     }
@@ -237,3 +244,4 @@ class Move {
     }
   }
 }
+
